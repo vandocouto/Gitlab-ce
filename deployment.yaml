@@ -38,3 +38,5 @@ spec:
          persistentVolumeClaim:
           claimName: gitlab-opt
       restartPolicy: Always
+      nodeSelector:
+       gitlabStorage: gitlab
