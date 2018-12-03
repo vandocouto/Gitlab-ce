@@ -4,7 +4,7 @@
 
 Step 1 - listing labels on nodes
 ```bash
- kubectl get nodes --show-labels
+kubectl get nodes --show-labels
 NAME           STATUS   ROLES    AGE   VERSION   LABELS
 kubernetes-1   Ready    master   22d   v1.12.2   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/hostname=kubernetes-1,node-role.kubernetes.io/master=
 kubernetes-2   Ready    node     22d   v1.12.2   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/hostname=kubernetes-2,nexusStorage=nexus,node-role.kubernetes.io/node=
