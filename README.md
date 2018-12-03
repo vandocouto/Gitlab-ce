@@ -1,5 +1,5 @@
 
-
+![enter image description here](https://lh3.googleusercontent.com/Z17i1m0zQqsIkbzPZVkQNy2BXBotZHnNFCNx9y9rx1R8bFwGVoa_GtNcrz7bo3ZhJA6kG0B5WCIDpg=s1024 "gitlab")
 # Gitlab-ce 
 
 Step 1 - listing labels on nodes
