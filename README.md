@@ -2,6 +2,13 @@
 ![enter image description here](https://lh3.googleusercontent.com/Z17i1m0zQqsIkbzPZVkQNy2BXBotZHnNFCNx9y9rx1R8bFwGVoa_GtNcrz7bo3ZhJA6kG0B5WCIDpg=s1024 "gitlab")
 # Gitlab-ce 
 
+### Clone project 
+```bash
+git clone https://github.com/vandocouto/Gitlab-ce
+cd Gitlab-ce
+```
+### Step by Step
+
 Step 1 - listing labels on nodes
 ```bash
 kubectl get nodes --show-labels
@@ -41,6 +48,7 @@ Step 5 - Create the secret opaque, report keypair (crt / key), convert to base64
 secret/gitlab-tls created
 ```
 Step 6 - Create object deployment 
+**Define variables**
 ```bash
  kubectl apply -f deployment.yaml
 deployment.extensions/gitlab created
@@ -51,6 +59,7 @@ kubectl apply -f service.yaml
 service/gitlab-service created
 ```
 Step 8 - Create object ingress 
+**Define variables**
 ```bash
  kubectl apply -f ingress.yaml
 ingress.extensions/gitlab-ingress created
