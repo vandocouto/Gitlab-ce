@@ -44,13 +44,13 @@ persistentvolumeclaim/gitlab-opt created
 ```
 Step 5 - Create the secret opaque, report keypair (crt / key), convert to base64 - [Base64Encode](https://base64encode.org) 
 ```bash
- kubectl apply -f secret.yaml
+kubectl apply -f secret.yaml
 secret/gitlab-tls created
 ```
 Step 6 - Create object deployment 
 **Define variables**
 ```bash
- kubectl apply -f deployment.yaml
+kubectl apply -f deployment.yaml
 deployment.extensions/gitlab created
 ```
 Step 7 - Create objetct service (port 80 e 22)
@@ -61,7 +61,7 @@ service/gitlab-service created
 Step 8 - Create object ingress 
 **Define variables**
 ```bash
- kubectl apply -f ingress.yaml
+kubectl apply -f ingress.yaml
 ingress.extensions/gitlab-ingress created
 ```
 Step 9 - View pod logs 
