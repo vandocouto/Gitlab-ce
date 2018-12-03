@@ -1,0 +1,89 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name:  volume-gitlab-etc
+  labels:
+    type: local
+spec:
+  storageClassName: gitlab-etc
+  capacity:
+    storage: 40Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/storage/gitlab/etc"
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name:  volume-gitlab-log
+  labels:
+    type: local
+spec:
+  storageClassName: gitlab-log
+  capacity:
+    storage: 40Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/storage/gitlab/log"
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name:  volume-gitlab-opt
+  labels:
+    type: local
+spec:
+  storageClassName: gitlab-opt
+  capacity:
+    storage: 40Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/storage/gitlab/opt"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: gitlab-etc
+  namespace: gitlab
+  labels:
+   name: gitlab-etc
+spec:
+  storageClassName: gitlab-etc
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 3Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: gitlab-log
+  namespace: gitlab
+  labels:
+   name: gitlab-log
+spec:
+  storageClassName: gitlab-log
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 3Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: gitlab-opt
+  namespace: gitlab
+  labels:
+   name: gitlab-opt
+spec:
+  storageClassName: gitlab-opt
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 3Gi

@@ -1,0 +1,40 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: gitlab
+  namespace: gitlab
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: gitlab
+  template:
+    metadata:
+      labels:
+        name: gitlab
+    spec:
+      containers:
+      - image: gitlab/gitlab-ce:latest
+        imagePullPolicy: Always
+        name: gitlab
+        ports:
+        - containerPort: 80
+        - containerPort: 22
+        volumeMounts:
+         - mountPath: /etc/gitlab
+           name: gitlab-etc-volume
+         - mountPath: /var/log/gitlab
+           name: gitlab-log-volume
+         - mountPath: /var/opt/gitlab
+           name: gitlab-opt-volume
+      volumes:
+       - name: gitlab-etc-volume
+         persistentVolumeClaim:
+          claimName: gitlab-etc
+       - name: gitlab-log-volume
+         persistentVolumeClaim:
+          claimName: gitlab-log
+       - name: gitlab-opt-volume
+         persistentVolumeClaim:
+          claimName: gitlab-opt
+      restartPolicy: Always
