@@ -2,7 +2,7 @@
 
 # Gitlab-ce 
 
-Setp 1 - listing labels on nodes
+Step 1 - listing labels on nodes
 ```bash
  kubectl get nodes --show-labels
 NAME           STATUS   ROLES    AGE   VERSION   LABELS
