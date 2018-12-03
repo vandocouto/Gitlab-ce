@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - gitlab.d2d.com.br
+    - gitlab.dominio.com.br
     secretName: gitlab-tls
   rules:
-  - host: gitlab.d2d.com.br
+  - host: gitlab.dominio.com.br
     http:
       paths:
       - path: /
